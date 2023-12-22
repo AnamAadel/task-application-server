@@ -142,8 +142,6 @@ app.get("/task", async (req, res) => {
   const status = req.query.status;
   const email = req.query?.email;
 
-  console.log(status, email)
-
   const filter = (status && email) ? {status: status, email: email} : {email: email};
 
   const taskData = await taskCollection.find(filter).toArray();
